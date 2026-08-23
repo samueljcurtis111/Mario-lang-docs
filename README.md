@@ -6,7 +6,7 @@ This documentation covers the architecture, syntax, compilation pipeline, and pe
 
 ## 1. Overview & Architecture
 
-MarioLang is a Brainfuck-derivative language where the only valid keyword is `mario`. The compiler works by counting how many times `mario` appears in a single block of text to determine the instruction.
+MarioLang is a minimalist, tape-based esoteric language where the only valid keyword is `mario`. The compiler works by counting how many times `mario` appears in a single block of text to determine the instruction.
 
 The transpiler uses a three-stage pipeline:
 1. **Frontend / Tokenizer:** Parses the `.mario` file, counts words, and maps them to a string of intermediate IDs.
@@ -24,7 +24,7 @@ To move to the next instruction, you must use **two spaces** or a **newline**.
 
 ### Base Instruction Set
 
-| `mario` Count | Token | Brainfuck | Generated C Code | Description |
+| `mario` Count | Token | Equivalent Symbol | Generated C Code | Description |
 |---|---|---|---|---|
 | **1** | `Add` | `+` | `++*ptr;` | Increment the current memory cell |
 | **2** | `Sub` | `-` | `--*ptr;` | Decrement the current memory cell |
